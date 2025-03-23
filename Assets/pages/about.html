@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About EDVERNTURE</title>
+        <link rel="stylesheet" href="./about.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="logo">
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256">
+                        <g fill="#fffefe" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,9v2h50v-2zM0,24v2h50v-2zM0,39v2h50v-2z"></path></g></g>
+                    </svg>
+                    <span class="linktext">MENU</span>                
+                </li>
+            </ul>
+        </nav>
+
+        <div class="main">
+            <div id="heading" class="hidden">
+                <h1>About<br>EdVernture.</h1>
+            </div>
+            <div id="us" class="hidden">
+                <div class="question">
+                    <img src="../svg/questions.svg">
+                </div>
+                <section class="textcontainer">
+                    <p class="who"><b>Who are we?</b></p>
+                    <p class="weare">
+                        Edvernture is a leading online platform that offers premium 
+                        courses across various domains. 
+                        Our mission is to make quality education accessible to 
+                        everyone and empower individuals to achieve their career 
+                        goals.
+                    </p>
+                </section>
+            </div>
+            <div id="mission" class="hidden">
+                <div class="textContainer">
+                    <p class="missionHeading">
+                        Our Mission
+                    </p>
+                    <p class="missionTxt">
+                        Our mission is to bridge the skill gap by 
+                        providing world-class educational content 
+                        and empowering learners with practical skills 
+                        to succeed in the real world.
+                    </p>
+                </div>
+                <img src="../svg/mission.svg">
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2025 EdVernture. All Rights Reserved.</p>
+        </footer>
+        <script>
+            const navbar = document.querySelector(".navbar");
+            const menuIcon = document.getElementById("menuIcon");
+            navbar.addEventListener("mouseenter",() =>{
+                menuIcon.style.display = "none";
+                document.querySelector(".main").style.marginLeft = "14rem";
+            });
+            navbar.addEventListener("mouseleave", ()=>{
+                menuIcon.style.display = "block";
+                document.querySelector(".main").style.marginLeft = "4rem";
+            });
+
+            const observer = new IntersectionObserver((entries)=>{
+                entries.forEach((entry) => {
+                    console.log(entry)
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('show');
+                    }
+                    else{
+                        entry.target.classList.remove('show');
+                    }
+                })
+            });
+            const animationElement = document.querySelectorAll(".hidden");
+            animationElement.forEach((el)=>observer.observe(el));
+        </script>
+    </body>
+</html>

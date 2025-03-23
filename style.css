@@ -1,0 +1,133 @@
+:root{
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    --text-primary:#CFD0D1;
+    --text-secondary:#ffffff;
+    --bg-primary: #333;
+    --bg-secondary: #000;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+/* Scrollbar  */
+body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+
+/* navigation bar */
+.navbar{
+    width: 4rem;
+    height: 100vh;
+    padding-left: 0.5rem;
+    position: fixed;
+    background-color: var(--bg-secondary);
+    transition: 200ms ease;
+}
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.navlink{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.linktext{
+    display: none;
+    margin-left: 1rem;
+}
+.navbar:hover{
+    width: 14rem;
+    background:#1e1e24;
+}
+.navbar:hover .linktext{
+    display:block;
+}
+.nav-item:last-child{
+    margin: auto;
+}
+.navlink svg{
+    min-width: 1rem;
+    margin: 0 1.5rem;
+}
+.logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+    color: var(--text-primary);
+}
+.logo svg{
+    transform: rotate(0deg);
+    transition: tranform 200ms;
+    padding-top: 1.5rem;
+}
+.navbar:hover .logo svg{
+    transform:rotate(-180deg);
+}
+#menuIcon{
+    padding-left:0.5rem;
+}
+
+/* MAIN content */
+
+.main {
+    margin-left: 4rem;
+    padding: 1rem;
+    height: 700px;
+    background: var(--bg-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.main p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.main button {
+    background-color: var(--text-primary);
+    color: var(--bg-secondary);
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 200ms;
+}
+
+.main button:hover {
+    background-color: #ff8c00;
+}
+
+.main button a {
+    color: #333;
+    text-decoration: none;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
