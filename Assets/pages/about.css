@@ -106,12 +106,12 @@ body::-webkit-scrollbar-track{
     border-left: 2px solid var(--text-primary);
     text-transform: uppercase;
     background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff, 
-        #8f68ff,#fc72ff);
+    #8f68ff,#fc72ff);
+    background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-gradient 2.5s linear infinite;
-    position: fixed;
+    animation: animate-gradient 2s linear infinite;
 }
 #us{
     color: var(--text-primary);
@@ -182,6 +182,8 @@ footer {
     to{
         background-position: 200%;
     }
+    /* 0% { background-position: left; }
+    100% { background-position: right; } */
 }
 @media(prefers-reduced-motion){
     .hidden{
