@@ -64,25 +64,19 @@
                 </div>
                 <img src="../svg/mission.svg">
             </div>
-            <div class="team-container">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Founder">
-                    <h3>Hardik Jalan</h3>
-                    <p>Founder & CEO</p>
+
+            <div class="hidden" id="team">
+                <div class="team-container">
+                    <div class="team-member">
+                        <h3>Ayush Saraf</h3>
+                        <p>Founder</p>
+                    </div>
+                    <div class="team-member">
+                        <h3>Shlok Ghadekar</h3>
+                        <p>CEO</p>
+                    </div>
                 </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Instructor">
-                    <h3>Ayush Bhardwaj</h3>
-                    <p>Lead Instructor</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/100" alt="Marketing Head">
-                    <h3>Kevin Parakal</h3>
-                    <p>Marketing Head</p>
-                </div>
-                
-                   
-                </div>
+                <h2 class="team">Our Team</h2>
             </div>
         </div>
         <footer>
@@ -113,6 +107,17 @@
             });
             const animationElement = document.querySelectorAll(".hidden");
             animationElement.forEach((el)=>observer.observe(el));
+
+            const color1 = "#333";
+            const teamMember = document.querySelectorAll(".team-member");
+            teamMember.forEach((el) => {
+                el.addEventListener("mouseenter",() => {
+                    el.style.backgroundColor = 'white';
+                });
+                el.addEventListener("mouseleave",() => {
+                    el.style.backgroundColor = '';
+                });
+            });
         </script>
     </body>
 </html>
