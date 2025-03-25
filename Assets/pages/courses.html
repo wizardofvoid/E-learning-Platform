@@ -17,59 +17,63 @@
             </li>
             <li class="nav-item"> 
                 <a href="./Assets/pages/about.html" class="navlink">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
-                        <g fill="#fffefe" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM9,10c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h1v8h-1c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h6c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-1v-9c0,-0.552 -0.448,-1 -1,-1h-2z"></path></g></g>
-                    </svg>  
+                    <img src="../svg/about.svg"> 
                     <span class="linktext">About us</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="courses.html" class="navlink">
-                    <img src="./Assets/img/Courses.png">
+                <a href="courses.html" class="navlink" id="courses">
+                    <img src="../img/Courses.png">
                     <span class="linktext">Courses</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="contact.html" class="navlink">
-                    <img src="./Assets/img/Contact.png">
+                    <img src="../img/Contact.png">
                     <span class="linktext">Contact us</span>
+                </a>
+            </li>
+            <li class="nav-item" id="logincontainer">
+                <a href="./Assets/pages/form.html" class="navlink">
+                    <img src="../svg/profilePicMale.svg" id="login">
+                    <span class="linktext">Login/Signup</span>
                 </a>
             </li>
         </ul>
     </nav>
 
     <div class="main">
-        <section class="hero">
+        <section class="hero hidden">
             <h1 class="animate-text">Upgrade Your Skills</h1>
             <p class="animate-text">Learn from highly professional experts in various fields and expand your knowledge.</p>
         </section>
 
-        <section class="courses">
+        <section class="courses hidden">
             <h2>Popular Courses</h2>
             <div class="course-grid">
                 <div class="course-item" data-course-id="1" data-course-name="Web Development Basics" data-course-price="49.99">
-                    <img src="WebP.jpeg">
+                    <img src="../img/webDev.jpeg">
                     <h3>Web Development Basics</h3>
                     <p>Learn the fundamentals of web development. Build websites from scratch.</p>
                     <p>Price: 1199 Rs</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="course-item" data-course-id="2" data-course-name="Python Programming" data-course-price="59.99">
-                    <img src="Python.jpeg">
+                    <img src="../svg/python.svg">
                     <h3>Python Programming</h3>
                     <p>Master Python programming language. Learn data structures and algorithms.</p>
                     <p>Price: 1299 Rs</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="course-item" data-course-id="3" data-course-name="Graphic Design" data-course-price="39.99">
-                    <img src="GD.jpeg.png">
+                    <img src="../img/graphicDesign.png">
                     <h3>Graphic Design</h3>
                     <p>Create stunning visual designs. Learn Adobe Photoshop and Illustrator.</p>
                     <p>Price: 899 Rs</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="course-item" data-course-id="4" data-course-name="Digital Marketing" data-course-price="69.99">
-                    <img src="DM.jpeg">
+                    <img src="../img/digitalMarketing.jpeg">
                     <h3>Digital Marketing</h3>
                     <p>Learn effective marketing strategies. Master SEO and social media marketing.</p>
                     <p>Price: 1599 Rs</p>
@@ -100,6 +104,29 @@
                 menuIcon.style.display = "block";
                 document.querySelector(".main").style.marginLeft = "4rem";
             });
+            function chkLogin(){
+                const logUser = localStorage.getItem("loggedInUser");
+                if(logUser){
+                    document.getElementById("courses").style.display = "block";
+                }
+                else{
+                    document.getElementById("courses").style.display = "none";
+                }
+            }
+            chkLogin()
+            const observer = new IntersectionObserver((entries)=>{
+                entries.forEach((entry) => {
+                    console.log(entry)
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('show');
+                    }
+                    else{
+                        entry.target.classList.remove('show');
+                    }
+                })
+            });
+            const animationElement = document.querySelectorAll(".hidden");
+            animationElement.forEach((el)=>observer.observe(el));
     </script>
 </body>
 </html>
