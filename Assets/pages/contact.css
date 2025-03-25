@@ -1,0 +1,215 @@
+:root {
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    --text-primary: #333;  
+    --text-secondary: #ffffff;  
+    --bg-primary: #121212;  
+    --bg-secondary: #1a1a1a; 
+    --button-bg: #5C6BC0;  
+    --hover-bg: #3949AB;  
+    --input-bg: #fff;  
+    --input-border: #ddd; 
+    --footer-bg: #121212;
+    --footer-text: #BDBDBD; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Side Navbar */
+.navbar {
+    width: 4rem;
+    height: 100vh;
+    padding-left: 0.5rem;
+    position: fixed;
+    background-color: var(--bg-secondary);
+    transition: 200ms ease;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navlink {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.linktext {
+    display: none;
+    margin-left: 1rem;
+}
+
+.navbar:hover {
+    width: 14rem;
+    background: #1e1e24;
+}
+
+.navbar:hover .linktext {
+    display: block;
+}
+
+.nav-item:last-child a{
+    margin-top: auto;
+}
+
+.navlink svg {
+    min-width: 1rem;
+    margin: 0 1.5rem;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+    color: var(--text-secondary);
+}
+
+.logo svg {
+    transform: rotate(0deg);
+    transition: transform 200ms;
+    padding-top: 1.5rem;
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+#menuIcon {
+    padding-left: 0.5rem;
+}
+#login{
+    height: 50px;
+    width: 50px;
+}
+#logincontainer{
+    margin-top:45vh;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 4rem;
+    width: calc(100% - 4rem);
+    padding: 1rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: var(--text-secondary);
+    max-width: 80%;
+}
+
+/* Contact Form Section */
+section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    padding: 15px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--text-secondary);
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Contact Info Section */
+.contact-info {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-secondary);
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
