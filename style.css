@@ -55,9 +55,6 @@ body::-webkit-scrollbar-track{
 .navbar:hover .linktext{
     display:block;
 }
-.nav-item:last-child{
-    margin: auto;
-}
 .navlink svg{
     min-width: 1rem;
     margin: 0 1.5rem;
@@ -83,6 +80,13 @@ body::-webkit-scrollbar-track{
 }
 #menuIcon{
     padding-left:0.5rem;
+}
+#login{
+    height: 50px;
+    width: 50px;
+}
+#logincontainer{
+    margin-top:45vh;
 }
 
 /* MAIN content */

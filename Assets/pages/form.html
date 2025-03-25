@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="logo">
+                <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256">
+                    <g fill="#fffefe" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,9v2h50v-2zM0,24v2h50v-2zM0,39v2h50v-2z"></path></g></g>
+                </svg>
+                <span class="linktext">MENU</span>                
+            </li>
+            <li class="nav-item"> 
+                <a href="../pages/about.html" class="navlink">
+                    <img src="../svg/about.svg">
+                    <span class="linktext">
+                        About us
+                    </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="courses.html" class="navlink">
+                    <img src="../img/Courses.png">
+                    <span class="linktext">Courses</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="navlink">
+                    <img src="../img/Contact.png">
+                      
+                    <span class="linktext">Contact us</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="main">
+    <div class="container">
+        <div class="form-box-login visible">
+            <form action="">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <div class="forgot-link">
+                    <a href="#">Forgot Password</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <p>or login with social platforms</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-google' ></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                    <a href="#"><i class='bx bxl-github' ></i></a>
+                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box-reg hidden">
+            <form action="">
+                <h1>Register</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                <p>or register with social platforms</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-google' ></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                    <a href="#"><i class='bx bxl-github' ></i></a>
+                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                </div>
+            </form>
+        </div>
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left visible">
+                <h1>Hello, Welcome!</h1>
+                <p>Don't have an account?</p>
+                <button onclick="toggleL()" class="btn register-btn">Register</button>
+            </div>
+            <div class="toggle-panel toggle-right hidden">
+                <h1>Welcome back!</h1>
+                <p>Already have an account?</p>
+                <button onclick="toggleR()" class="btn login-btn">Login</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        const navbar = document.querySelector(".navbar");
+        const menuIcon = document.getElementById("menuIcon");
+        navbar.addEventListener("mouseenter",() =>{
+            menuIcon.style.display = "none";
+        });
+        navbar.addEventListener("mouseleave", ()=>{
+            menuIcon.style.display = "block";
+        });
+        
+        const login = document.querySelector(".form-box-login");
+        const register = document.querySelector(".form-box-reg");
+        const toggleLeft = document.querySelector(".toggle-panel.toggle-left");
+        const toggleRight = document.querySelector(".toggle-panel.toggle-right");
+        function toggleL(){
+            login.classList.remove("visible");
+            login.classList.add("hidden");
+            register.classList.remove("hidden");
+            register.classList.add("visible");
+            toggleLeft.classList.remove("visible");
+            toggleLeft.classList.add("hidden");
+            toggleRight.classList.remove("hidden");
+            toggleRight.classList.add("visible");
+        }
+        function toggleR(){
+            login.classList.remove("hidden");
+            login.classList.add("visible");
+            register.classList.remove("visible");
+            register.classList.add("hidden");
+            toggleLeft.classList.remove("hidden");
+            toggleLeft.classList.add("visible");
+            toggleRight.classList.remove("visible");
+            toggleRight.classList.add("hidden");
+        }
+    </script>
+</body>
+</html>

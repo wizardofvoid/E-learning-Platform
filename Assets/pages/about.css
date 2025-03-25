@@ -83,6 +83,12 @@ body::-webkit-scrollbar-track{
 }
 #menuIcon{
     padding-left:0.5rem;
+}#login{
+    height: 50px;
+    width: 50px;
+}
+#logincontainer{
+    margin-top:45vh;
 }
 
 .main{
