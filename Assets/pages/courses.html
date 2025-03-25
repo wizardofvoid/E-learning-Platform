@@ -5,36 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edu Venture Online Courses</title>
     <link rel="stylesheet" href="./stylec.css">
+    <style>
+        /* Style for View Cart Button */
+        .cart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cart-button {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .cart-button:hover {
+            background-color: #e68900;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <ul class="navbar-nav">
             <li class="logo">
                 <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256">
-                    <g fill="#fffefe" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M0,9v2h50v-2zM0,24v2h50v-2zM0,39v2h50v-2z"></path></g></g>
+                    <g fill="#fffefe"><g transform="scale(5.12,5.12)"><path d="M0,9v2h50v-2zM0,24v2h50v-2zM0,39v2h50v-2z"></path></g></g>
                 </svg>
                 <span class="linktext">MENU</span>                
             </li>
-            <li class="nav-item"> 
-                <a href="./Assets/pages/about.html" class="navlink">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256">
-                        <g fill="#fffefe" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,2c-1.657,0 -3,1.343 -3,3c0,1.657 1.343,3 3,3c1.657,0 3,-1.343 3,-3c0,-1.657 -1.343,-3 -3,-3zM9,10c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h1v8h-1c-0.36064,-0.0051 -0.69608,0.18438 -0.87789,0.49587c-0.18181,0.3115 -0.18181,0.69676 0,1.00825c0.18181,0.3115 0.51725,0.50097 0.87789,0.49587h6c0.36064,0.0051 0.69608,-0.18438 0.87789,-0.49587c0.18181,-0.3115 0.18181,-0.69676 0,-1.00825c-0.18181,-0.3115 -0.51725,-0.50097 -0.87789,-0.49587h-1v-9c0,-0.552 -0.448,-1 -1,-1h-2z"></path></g></g>
-                    </svg>  
-                    <span class="linktext">About us</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="courses.html" class="navlink">
-                    <img src="./Assets/img/Courses.png">
-                    <span class="linktext">Courses</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="contact.html" class="navlink">
-                    <img src="./Assets/img/Contact.png">
-                    <span class="linktext">Contact us</span>
-                </a>
-            </li>
+            <li class="nav-item"><a href="./Assets/pages/about.html" class="navlink"><span class="linktext">About us</span></a></li>
+            <li class="nav-item"><a href="courses.html" class="navlink"><span class="linktext">Courses</span></a></li>
+            <li class="nav-item"><a href="contact.html" class="navlink"><span class="linktext">Contact us</span></a></li>
         </ul>
     </nav>
 
@@ -47,28 +52,28 @@
         <section class="courses">
             <h2>Popular Courses</h2>
             <div class="course-grid">
-                <div class="course-item" data-course-id="1" data-course-name="Web Development Basics" data-course-price="49.99">
+                <div class="course-item" data-course-id="1" data-course-name="Web Development Basics" data-course-price="1199">
                     <img src="WebP.jpeg">
                     <h3>Web Development Basics</h3>
                     <p>Learn the fundamentals of web development. Build websites from scratch.</p>
                     <p>Price: 1199 Rs</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-                <div class="course-item" data-course-id="2" data-course-name="Python Programming" data-course-price="59.99">
+                <div class="course-item" data-course-id="2" data-course-name="Python Programming" data-course-price="1299">
                     <img src="Python.jpeg">
                     <h3>Python Programming</h3>
                     <p>Master Python programming language. Learn data structures and algorithms.</p>
                     <p>Price: 1299 Rs</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-                <div class="course-item" data-course-id="3" data-course-name="Graphic Design" data-course-price="39.99">
-                    <img src="GD.jpeg.png">
+                <div class="course-item" data-course-id="3" data-course-name="Graphic Design" data-course-price="899">
+                    <img src="GD.jpeg">
                     <h3>Graphic Design</h3>
                     <p>Create stunning visual designs. Learn Adobe Photoshop and Illustrator.</p>
                     <p>Price: 899 Rs</p>
                     <button class="add-to-cart">Add to Cart</button>
                 </div>
-                <div class="course-item" data-course-id="4" data-course-name="Digital Marketing" data-course-price="69.99">
+                <div class="course-item" data-course-id="4" data-course-name="Digital Marketing" data-course-price="1599">
                     <img src="DM.jpeg">
                     <h3>Digital Marketing</h3>
                     <p>Learn effective marketing strategies. Master SEO and social media marketing.</p>
@@ -77,6 +82,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- View Cart Button -->
+        <div class="cart-container">
+            <a href="cart.html" class="cart-button">View Cart (<span id="cart-count">0</span>)</a>
+        </div>
     </div>
 
     <footer>
@@ -84,22 +94,48 @@
     </footer>
 
     <script>
+        function updateCartUI() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+
+            document.querySelectorAll('.course-item').forEach(courseItem => {
+                let courseId = courseItem.getAttribute('data-course-id');
+                let button = courseItem.querySelector('.add-to-cart');
+                
+                if (cart.some(course => course.id === courseId)) {
+                    button.textContent = 'Added to Cart';
+                    button.style.backgroundColor = '#4CAF50';
+                    button.disabled = true;
+                } else {
+                    button.textContent = 'Add to Cart';
+                    button.style.backgroundColor = '#ff9800';
+                    button.disabled = false;
+                }
+            });
+        }
+
         document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                button.textContent = 'Added to Cart';
-                button.style.backgroundColor = '#ff9800';
+            button.addEventListener('click', (event) => {
+                let courseItem = event.target.closest('.course-item');
+                let course = {
+                    id: courseItem.getAttribute('data-course-id'),
+                    name: courseItem.getAttribute('data-course-name'),
+                    price: parseInt(courseItem.getAttribute('data-course-price')),
+                    img: courseItem.querySelector('img').src
+                };
+
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                if (!cart.some(c => c.id === course.id)) {
+                    cart.push(course);
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartUI();
+                }
             });
         });
-        const navbar = document.querySelector(".navbar");
-            const menuIcon = document.getElementById("menuIcon");
-            navbar.addEventListener("mouseenter",() =>{
-                menuIcon.style.display = "none";
-                document.querySelector(".main").style.marginLeft = "14rem";
-            });
-            navbar.addEventListener("mouseleave", ()=>{
-                menuIcon.style.display = "block";
-                document.querySelector(".main").style.marginLeft = "4rem";
-            });
+
+        updateCartUI();
     </script>
+
 </body>
 </html>
