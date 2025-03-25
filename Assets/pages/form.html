@@ -25,7 +25,7 @@
                     </span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="courses">
                 <a href="courses.html" class="navlink">
                     <img src="../img/Courses.png">
                     <span class="linktext">Courses</span>
@@ -46,17 +46,17 @@
             <form action="">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input class="usernameLogin" type="text" placeholder="Username" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input class="passwordLogin" type="password" placeholder="Password" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
                 <div class="forgot-link">
                     <a href="#">Forgot Password</a>
                 </div>
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" id="login">Login</button>
                 <p>or login with social platforms</p>
                 <div class="social-icons">
                     <a href="#"><i class='bx bxl-google' ></i></a>
@@ -68,21 +68,21 @@
         </div>
 
         <div class="form-box-reg hidden">
-            <form action="">
+            <form>
                 <h1>Register</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input class="usernameReg" type="text" placeholder="Username" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Email" required>
+                    <input class="emailReg" type="email" placeholder="Email" required>
                     <i class='bx bxs-envelope' ></i>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input class="passwordReg" type="password" placeholder="Password" required>
                     <i class='bx bxs-lock-alt' ></i>
                 </div>
-                <button type="submit" class="btn">Register</button>
+                <button type="submit" class="btn" id="reg">Register</button>
                 <p>or register with social platforms</p>
                 <div class="social-icons">
                     <a href="#"><i class='bx bxl-google' ></i></a>
@@ -106,40 +106,6 @@
         </div>
     </div>
     </div>
-    <script>
-        const navbar = document.querySelector(".navbar");
-        const menuIcon = document.getElementById("menuIcon");
-        navbar.addEventListener("mouseenter",() =>{
-            menuIcon.style.display = "none";
-        });
-        navbar.addEventListener("mouseleave", ()=>{
-            menuIcon.style.display = "block";
-        });
-        
-        const login = document.querySelector(".form-box-login");
-        const register = document.querySelector(".form-box-reg");
-        const toggleLeft = document.querySelector(".toggle-panel.toggle-left");
-        const toggleRight = document.querySelector(".toggle-panel.toggle-right");
-        function toggleL(){
-            login.classList.remove("visible");
-            login.classList.add("hidden");
-            register.classList.remove("hidden");
-            register.classList.add("visible");
-            toggleLeft.classList.remove("visible");
-            toggleLeft.classList.add("hidden");
-            toggleRight.classList.remove("hidden");
-            toggleRight.classList.add("visible");
-        }
-        function toggleR(){
-            login.classList.remove("hidden");
-            login.classList.add("visible");
-            register.classList.remove("visible");
-            register.classList.add("hidden");
-            toggleLeft.classList.remove("hidden");
-            toggleLeft.classList.add("visible");
-            toggleRight.classList.remove("visible");
-            toggleRight.classList.add("hidden");
-        }
-    </script>
+    <script src="./form.js"></script>
 </body>
 </html>

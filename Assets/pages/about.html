@@ -15,7 +15,7 @@
                     </svg>
                     <span class="linktext">MENU</span>                
                 </li>
-                <li class="nav-item">
+                <li id="courses" class="nav-item">
                     <a href="./courses.html" class="navlink">
                         <img src="../img/Courses.png">
                         <span class="linktext">Courses</span>
@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item" id="logincontainer">
-                    <a href="./login.html" class="navlink">
+                    <a href="./form.html" class="navlink">
                         <img src="../svg/profilePicMale.svg" id="login">
                         <span class="linktext">Login/Signup</span>
                     </a>
@@ -56,7 +56,7 @@
                     </p>
                 </section>
             </div>
-            <div id="mission" class="hidden">
+            <div id="mission" class="hidden"> 
                 <div class="textContainer">
                     <p class="missionHeading">
                         Our Mission
@@ -124,6 +124,16 @@
                     el.style.backgroundColor = '';
                 });
             });
+            function chkLogin(){
+                const logUser = localStorage.getItem("loggedInUser");
+                if(logUser){
+                    document.getElementById("courses").style.display = "block";
+                }
+                else{
+                    document.getElementById("courses").style.display = "none";
+                }
+            }
+            chkLogin()
         </script>
     </body>
 </html>
