@@ -25,8 +25,8 @@ body::-webkit-scrollbar-track{
     height: 100vh;
     padding-left: 0.5rem;
     position: fixed;
-    background-color: var(--bg-secondary);
-    transition: 200ms ease;
+    background: linear-gradient(to top, #111,#333,#333,#111);
+    transition: 400ms ease;
 }
 .navbar ul {
     list-style: none;
