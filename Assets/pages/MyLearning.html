@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning - Web Programming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #000; color: #fff; }
+        .container { max-width: 900px; margin: auto; background: #111; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; }
+        .course-list li { cursor: pointer; padding: 12px; border-radius: 8px; transition: background 0.3s, transform 0.2s; color: #fff; background: #222; margin-bottom: 5px; }
+        .course-list li:hover { background: #444; transform: scale(1.05); }
+        .btn { display: inline-block; padding: 12px 18px; background-color: #FFD700; color: #000; font-weight: bold; text-align: center; border-radius: 8px; transition: background 0.3s, transform 0.2s; }
+        .btn:hover { background-color: #FFC107; transform: scale(1.05); }
+        h1, h2 { color: #FFD700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="courses.html" class="btn mb-4 inline-block">← Back to Courses</a>
+        <h1 class="text-2xl font-bold mb-4">My Learning - Web Programming</h1>
+        
+        <!-- Video Player -->
+        <div class="video-wrapper mb-6">
+            <iframe id="videoPlayer" src="https://www.youtube.com/embed/l1EssrLxt7E" frameborder="0" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Course Content -->
+        <div>
+            <h2 class="text-xl font-semibold mb-3">Course Content</h2>
+            <ul class="course-list p-4 rounded-lg">
+                <li onclick="changeVideo('Rek0NWPCNOc')">Topic 1: Introduction to Web Development</li>
+                <li onclick="changeVideo('2QR11oDukn4')">Topic 2: HTML Basics</li>
+                <li onclick="changeVideo('jRAZlTEZi9I')">Topic 3: CSS Fundamentals</li>
+                <li onclick="changeVideo('61ppyY5rUB0')">Topic 4: JavaScript Basics</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function changeVideo(videoId) {
+            document.getElementById('videoPlayer').src = "https://www.youtube.com/embed/" + videoId;
+        }
+    </script>
+</body>
+</html>
