@@ -49,6 +49,12 @@
                     <span class="linktext">Contact us</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="./MyLearning.html" class="navlink notvisible" id="learning">
+                    <img src="../img/learning.png">
+                    <span class="linktext">My learning</span>
+                </a>
+            </li>
             <li class="nav-item" id="logincontainer">
                 <a href="../pages/form.html" class="navlink">
                     <img src="../svg/profilePicMale.svg" id="login">
@@ -195,6 +201,17 @@
                 localStorage.removeItem("loggedInUser");
                 location.reload();
             })
+
+            function chkPurchase(){
+                const purchased = localStorage.getItem("purchasedCourses");
+                if(purchased){
+                    document.getElementById("learning").classList.remove('notvisible');
+                }
+                else{
+                    document.getElementById("learning").classList.add('notvisible');
+                }
+            }
+            chkPurchase();
     </script>
 
 </body>

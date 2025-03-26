@@ -63,6 +63,24 @@
             text-align: right;
             margin-top: 15px;
         }
+        .buyBtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .buy{
+            background-color: #CFD0D1;
+            color: #000;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 200ms;
+        }
+        .buy:hover{
+            background-color: #ff8c00;
+        }
     </style>
 </head>
 <body>
@@ -75,6 +93,9 @@
     <h2>Your Cart</h2>
     <div id="cart-items"></div>
     <p class="total">Total: Rs <span id="total-price">0</span></p>
+    <div class="buyBtn">
+        <button class="buy">Buy Now</button>
+    </div>
 </div>
 
 <script>
@@ -107,6 +128,33 @@
     }
 
     loadCart();
+
+    function Buy() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+    
+        let purchasedCourses = JSON.parse(localStorage.getItem('purchasedCourses')) || [];
+    
+        cart.forEach(item => {
+            if (!purchasedCourses.includes(item.id)) {
+                purchasedCourses.push(item.id);
+            } else {
+                alert(`You have already purchased "${item.name}"`);
+            }
+        });
+    
+        localStorage.setItem('purchasedCourses', JSON.stringify(purchasedCourses));
+    
+        alert("Purchase successful!");
+        localStorage.removeItem('cart'); 
+        loadCart();
+    }
+    
+    document.querySelector('.buy').addEventListener('click', Buy);
+    
 </script>
 
 </body>
