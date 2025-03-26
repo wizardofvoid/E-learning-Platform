@@ -67,13 +67,20 @@ function Login(){
 
 document.querySelector("#login").addEventListener("click", Login);
 
+const logoutBtn = document.getElementById("logout");
+
 function chkLogin(){
     const logUser = localStorage.getItem("loggedInUser");
     if(logUser){
-        document.getElementById("courses").style.display = "block";
+        logoutBtn.classList.remove('notvisible');
     }
     else{
-        document.getElementById("courses").style.display = "none";
+        logoutBtn.classList.add('notvisible');
     }
 }
 chkLogin()
+
+logoutBtn.addEventListener("click",()=>{
+    localStorage.removeItem("loggedInUser");
+    location.reload();
+})

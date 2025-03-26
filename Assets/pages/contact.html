@@ -35,6 +35,10 @@
                     <span class="linktext">Login/Signup</span>
                 </a>
             </li>
+            <li class="nav-item hidden" id="logout">
+                <a class="navlink"><img src="../img/logout.png">
+                <span class="linktext">LogOut</span></a>
+            </li>
         </ul>
     </nav>
 
@@ -46,9 +50,16 @@
         <p>We'd love to hear from you! Reach out to us for any inquiries or support.</p>
     </section>
 
+    <section class="contact-info">
+        <h2 class="section-title">Our Contact Details</h2>
+        <p><strong>Email:</strong> support@edvernture.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Address:</strong> 123, EdVernture Street, New Delhi, India</p>
+    </section>
+
     <!-- Contact Form Section -->
     <section>
-        <h2 class="section-title">Contact Us</h2>
+        <h2 class="section-title">Want us to contact you instead? Fill out the form below.</h2>
         <form action="#" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -57,17 +68,9 @@
         </form>
     </section>
 
-    <!-- Contact Info Section -->
-    <section class="contact-info">
-        <h2 class="section-title">Our Contact Details</h2>
-        <p><strong>Email:</strong> support@eduventure.com</p>
-        <p><strong>Phone:</strong> +91 98765 43210</p>
-        <p><strong>Address:</strong> 123, Edu Venture Street, New Delhi, India</p>
-    </section>
-
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Edu Venture. All Rights Reserved.</p>
+        <p>&copy; 2025 EdVernture. All Rights Reserved.</p>
     </footer>
 </div>
 <script>
@@ -79,17 +82,25 @@
     navbar.addEventListener("mouseleave", ()=>{
     menuIcon.style.display = "block";
     });
+    const logoutBtn = document.getElementById("logout");
 
     function chkLogin(){
         const logUser = localStorage.getItem("loggedInUser");
         if(logUser){
             document.getElementById("courses").style.display = "block";
+            document.getElementById("logincontainer").classList.add('hidden');
+            logoutBtn.classList.remove('hidden');
         }
         else{
             document.getElementById("courses").style.display = "none";
         }
     }
     chkLogin()
+
+    logoutBtn.addEventListener("click",()=>{
+        localStorage.removeItem("loggedInUser");
+        location.reload();
+    })
 </script>
 </body>
 </html>

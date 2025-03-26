@@ -37,6 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .navlink {
@@ -59,10 +60,6 @@ body {
 
 .navbar:hover .linktext {
     display: block;
-}
-
-.nav-item:last-child a{
-    margin-top: auto;
 }
 
 .navlink svg {
@@ -100,7 +97,7 @@ body {
     width: 50px;
 }
 #logincontainer{
-    margin-top:45vh;
+    margin-top:60vh;
 }
 
 /* Main content */
@@ -119,7 +116,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 100vh;
     color: var(--text-secondary);
     text-align: center;
     padding: 20px;
@@ -212,4 +209,10 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+.hidden{
+    display: none;
+}
+#logout{
+    margin-top: 55vh;    
 }

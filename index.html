@@ -43,6 +43,10 @@
                     <span class="linktext">Login/Signup</span>
                 </a>
             </li>
+            <li class="nav-item hidden" id="logout">
+                <a class="navlink"><img src="./Assets/img/logout.png">
+                <span class="linktext">LogOut</span></a>
+            </li>
         </ul>
     </nav>
 
@@ -71,17 +75,25 @@
         navbar.addEventListener("mouseleave", ()=>{
             menuIcon.style.display = "block";
         });
+        const logoutBtn = document.getElementById("logout");
 
         function chkLogin(){
             const logUser = localStorage.getItem("loggedInUser");
             if(logUser){
                 document.getElementById("courses").style.display = "block";
+                document.getElementById("logincontainer").classList.add('hidden');
+                logoutBtn.classList.remove('hidden');
             }
             else{
                 document.getElementById("courses").style.display = "none";
             }
         }
         chkLogin()
+
+        logoutBtn.addEventListener("click",()=>{
+            localStorage.removeItem("loggedInUser");
+            location.reload();
+        })
     </script>
 </body>
 </html>

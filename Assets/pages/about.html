@@ -34,6 +34,10 @@
                         <span class="linktext">Login/Signup</span>
                     </a>
                 </li>
+                <li class="nav-item hidden" id="logout">
+                    <a class="navlink"><img src="../img/logout.png">
+                    <span class="linktext">LogOut</span></a>
+                </li>
             </ul>
         </nav>
 
@@ -124,16 +128,25 @@
                     el.style.backgroundColor = '';
                 });
             });
+
+            const logoutBtn = document.getElementById("logout");
             function chkLogin(){
                 const logUser = localStorage.getItem("loggedInUser");
                 if(logUser){
                     document.getElementById("courses").style.display = "block";
+                    document.getElementById("logincontainer").classList.add('notvisible');
+                    logoutBtn.classList.remove('notvisible');
                 }
                 else{
                     document.getElementById("courses").style.display = "none";
+                    logoutBtn.classList.add('notvisible');
                 }
             }
             chkLogin()
+            logoutBtn.addEventListener("click",()=>{
+                localStorage.removeItem("loggedInUser");
+                location.reload();
+            })
         </script>
     </body>
 </html>

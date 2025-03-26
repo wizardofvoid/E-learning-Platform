@@ -270,3 +270,10 @@ footer {
         background-position: 200%;
     }
 }
+
+.notvisible{
+    display: none;
+}
+#logout{
+    margin-top: 55vh;
+}

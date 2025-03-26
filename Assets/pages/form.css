@@ -35,6 +35,7 @@ body::-webkit-scrollbar-track{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 .navlink{
     display: flex;
@@ -247,4 +248,10 @@ form{
     opacity: 1;
     transform: translateY(0);
     visibility: visible;
+}
+.notvisible{
+    display: none;
+}
+#logout{
+    margin-top: 45vh;
 }
