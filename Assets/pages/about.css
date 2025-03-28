@@ -22,12 +22,12 @@ body::-webkit-scrollbar-track{
 
 /* navigation bar */
 .navbar{
-    width: 4rem;
+    width: 5vw;
     height: 100vh;
     padding-left: 0.5rem;
     position: fixed;
     background-color: var(--bg-secondary);
-    transition: 200ms ease;
+    transition: 400ms ease-in-out;
 }
 .navbar ul {
     list-style: none;
@@ -36,75 +36,65 @@ body::-webkit-scrollbar-track{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
 .navlink{
     display: flex;
     align-items: center;
-    height: 5rem;
+    height: 15vh;
     color: var(--text-primary);
     text-decoration: none;
 }
 .linktext{
     display: none;
-    margin-left: 1rem;
+    margin-left: 2vw;
 }
 .navbar:hover{
-    width: 14rem;
+    width: 15vw;
     background:#1e1e24;
+    z-index: 1;
 }
 .navbar:hover .linktext{
     display:block;
 }
-.nav-item:last-child{
-    margin: auto;
+.navbar:hover #menuIcon{
+    display: none;
 }
-.navlink svg{
-    min-width: 1rem;
-    margin: 0 1.5rem;
-}
+
 .logo{
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 3vh;
+    margin-bottom: 1vw;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: 0.3ch;
     width: 100%;
     color: var(--text-primary);
 }
-.logo svg{
-    transform: rotate(0deg);
-    transition: tranform 200ms;
-    padding-top: 1.5rem;
-}
-.navbar:hover .logo svg{
-    transform:rotate(-180deg);
-}
-#menuIcon{
-    padding-left:0.5rem;
-}#login{
+
+#login{
     height: 50px;
     width: 50px;
 }
 #logincontainer{
-    margin-top:53vh;
+    margin-top:58vh;
 }
 #logout{
-    margin-top: 55vh;    
+    margin-top: 45vh;    
 }
 
 .main{
-    margin-left: 4rem;
+    margin-left: 5vw;
     padding: 1rem;
-    height: 350vh;
+    height: 400vh;
     background: var(--bg-secondary);
     display: flex;
     flex-direction: column;
 }
 
 #heading{
-    height: 100vh;
+    height: 130vh;
     background-color: var(--bg-secondary);
     color: var(--text-primary);
 }
@@ -112,7 +102,9 @@ body::-webkit-scrollbar-track{
     font-size: 10rem;
     padding-left: 1rem;
     width: 100%;
-    border-left: 2px solid var(--text-primary);
+    border-left: 4px solid ;
+    border-image:linear-gradient(to top, #fc72ff, #8f68ff, #487bff, 
+    #8f68ff,#fc72ff) 4;
     text-transform: uppercase;
     background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff, 
     #8f68ff,#fc72ff);
@@ -219,11 +211,17 @@ footer {
     padding-top:2rem;
     text-align: center;
 }
-.hidden{
+.hiddenleft{
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(20px);
     transform: translateX(-100%);
-    transition: all 1s;
+    transition: all 1.2s;
+}
+.hiddenright{
+    opacity: 0;
+    filter: blur(20px);
+    transform: translateX(100%);
+    transition: all 1.2s;
 }
 .show{
     opacity: 1;

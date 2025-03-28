@@ -42,10 +42,10 @@
         </nav>
 
         <div class="main">
-            <div id="heading" class="hidden">
+            <div id="heading" class="hiddenleft">
                 <h1>About<br>EdVernture.</h1>
             </div>
-            <div id="us" class="hidden">
+            <div id="us" class="hiddenright">
                 <div class="question">
                     <img src="../svg/questions.svg">
                 </div>
@@ -60,7 +60,7 @@
                     </p>
                 </section>
             </div>
-            <div id="mission" class="hidden"> 
+            <div id="mission" class="hiddenleft"> 
                 <div class="textContainer">
                     <p class="missionHeading">
                         Our Mission
@@ -75,7 +75,7 @@
                 <img src="../svg/mission.svg">
             </div>
 
-            <div class="hidden" id="team">
+            <div class="hiddenright" id="team">
                 <div class="team-container">
                     <div class="team-member">
                         <h3>Ayush Saraf</h3>
@@ -93,17 +93,6 @@
             <p>&copy; 2025 EdVernture. All Rights Reserved.</p>
         </footer>
         <script>
-            const navbar = document.querySelector(".navbar");
-            const menuIcon = document.getElementById("menuIcon");
-            navbar.addEventListener("mouseenter",() =>{
-                menuIcon.style.display = "none";
-                document.querySelector(".main").style.marginLeft = "14rem";
-            });
-            navbar.addEventListener("mouseleave", ()=>{
-                menuIcon.style.display = "block";
-                document.querySelector(".main").style.marginLeft = "4rem";
-            });
-
             const observer = new IntersectionObserver((entries)=>{
                 entries.forEach((entry) => {
                     console.log(entry)
@@ -115,7 +104,11 @@
                     }
                 })
             });
-            const animationElement = document.querySelectorAll(".hidden");
+            const animationElement = [
+                ...document.querySelectorAll(".hiddenright"), 
+                ...document.querySelectorAll(".hiddenleft")
+                ];
+
             animationElement.forEach((el)=>observer.observe(el));
 
             const color1 = "#333";

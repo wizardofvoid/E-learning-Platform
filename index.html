@@ -60,21 +60,24 @@
                 Get Started
             </a>
         </button>
+        <!-- <div class="dark">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" fill="#FFCC00"/>
+            </svg>
+                
+            <svg width="25" height="50" viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 25C15.5 38.8071 25 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C25 0 15.5 11.1929 15.5 25Z" fill="#FFCC00"/>
+            </svg>
+        </div> -->
     </div>
+
 
     <footer>
         <p>&copy; 2025 EdVernture. All Rights Reserved.</p>
     </footer>
 
+    <script src="./anime-master/lib/anime.min.js"></script>
     <script>
-        const navbar = document.querySelector(".navbar");
-        const menuIcon = document.getElementById("menuIcon");
-        navbar.addEventListener("mouseenter",() =>{
-            menuIcon.style.display = "none";
-        });
-        navbar.addEventListener("mouseleave", ()=>{
-            menuIcon.style.display = "block";
-        });
         const logoutBtn = document.getElementById("logout");
 
         function chkLogin(){

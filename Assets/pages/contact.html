@@ -23,14 +23,14 @@
                     </span>
                 </a>
             </li>
-            <li class="nav-item" id="courses">
-                <a href="../pages/courses.html" class="navlink" >
+            <li id="courses" class="nav-item">
+                <a href="./courses.html" class="navlink">
                     <img src="../img/Courses.png">
                     <span class="linktext">Courses</span>
                 </a>
             </li>
             <li class="nav-item" id="logincontainer">
-                <a href="../pages/form.html" class="navlink">
+                <a href="./form.html" class="navlink">
                     <img src="../svg/profilePicMale.svg" id="login">
                     <span class="linktext">Login/Signup</span>
                 </a>
@@ -57,7 +57,6 @@
         <p><strong>Address:</strong> 123, EdVernture Street, New Delhi, India</p>
     </section>
 
-    <!-- Contact Form Section -->
     <section>
         <h2 class="section-title">Want us to contact you instead? Fill out the form below.</h2>
         <form action="#" method="post">
@@ -67,21 +66,12 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
-
-    <!-- Footer -->
+    
     <footer>
         <p>&copy; 2025 EdVernture. All Rights Reserved.</p>
     </footer>
 </div>
 <script>
-    const navbar = document.querySelector(".navbar");
-    const menuIcon = document.getElementById("menuIcon");
-    navbar.addEventListener("mouseenter",() =>{
-    menuIcon.style.display = "none";
-    });
-    navbar.addEventListener("mouseleave", ()=>{
-    menuIcon.style.display = "block";
-    });
     const logoutBtn = document.getElementById("logout");
 
     function chkLogin(){
@@ -93,6 +83,8 @@
         }
         else{
             document.getElementById("courses").style.display = "none";
+            document.getElementById("logincontainer").classList.remove('hidden');
+            logoutBtn.classList.add('hidden');
         }
     }
     chkLogin()
