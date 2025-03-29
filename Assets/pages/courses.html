@@ -158,16 +158,6 @@
                 }
             });
         });
-        const navbar = document.querySelector(".navbar");
-            const menuIcon = document.getElementById("menuIcon");
-            navbar.addEventListener("mouseenter",() =>{
-                menuIcon.style.display = "none";
-                document.querySelector(".main").style.marginLeft = "14rem";
-            });
-            navbar.addEventListener("mouseleave", ()=>{
-                menuIcon.style.display = "block";
-                document.querySelector(".main").style.marginLeft = "4rem";
-            });
             
             const observer = new IntersectionObserver((entries)=>{
                 entries.forEach((entry) => {
@@ -188,6 +178,7 @@
             function chkLogin(){
                 const logUser = localStorage.getItem("loggedInUser");
                 if(logUser){
+                    chkPurchase();
                     document.getElementById("logincontainer").classList.add('notvisible');
                     logoutBtn.classList.remove('notvisible');
                 }
@@ -211,7 +202,7 @@
                     document.getElementById("learning").classList.add('notvisible');
                 }
             }
-            chkPurchase();
+            
     </script>
 
 </body>

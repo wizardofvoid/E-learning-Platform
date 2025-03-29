@@ -27,15 +27,14 @@ body::-webkit-scrollbar-track {
 }
 
 /* navigation bar */
-.navbar {
-    width: 4rem;
+.navbar{
+    width: 5vw;
     height: 100vh;
     padding-left: 0.5rem;
     position: fixed;
     background-color: var(--bg-secondary);
-    transition: 200ms ease;
+    transition: 400ms ease-in-out;
 }
-
 .navbar ul {
     list-style: none;
     margin: 0;
@@ -43,66 +42,53 @@ body::-webkit-scrollbar-track {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100vh;
 }
-
-.navlink {
+.navlink{
     display: flex;
     align-items: center;
-    height: 5rem;
-    color: var(--text-primary);
+    height: 15vh;
+    color: var(--footer-text);
     text-decoration: none;
 }
-
-.linktext {
+.linktext{
     display: none;
-    margin-left: 1rem;
+    margin-left: 2vw;
+    color: var(--text-primary);
+}
+.navbar:hover{
+    width: 15vw;
+    background:#1e1e24;
+    z-index: 1;
+}
+.navbar:hover .linktext{
+    display:block;
+}
+.navbar:hover #menuIcon{
+    display: none;
 }
 
-.navbar:hover {
-    width: 14rem;
-    background: #1e1e24;
-}
-
-.navbar:hover .linktext {
-    display: block;
-}
-
-.navlink svg {
-    min-width: 1rem;
-    margin: 0 1.5rem;
-}
-
-.logo {
+.logo{
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 3vh;
+    margin-bottom: 1vw;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     letter-spacing: 0.3ch;
     width: 100%;
     color: var(--text-primary);
 }
 
-.logo svg {
-    transform: rotate(0deg);
-    transition: transform 200ms;
-    padding-top: 1.5rem;
-}
-
-.navbar:hover .logo svg {
-    transform: rotate(-180deg);
-}
-
-#menuIcon {
-    padding-left: 0.5rem;
-}
 #login{
     height: 50px;
     width: 50px;
 }
 #logincontainer{
-    margin-top:45vh;
+    margin-top: 45vh;
+}
+#logout{
+    margin-top: 30vh;
 }
 
 /* MAIN content */
@@ -273,7 +259,4 @@ footer {
 
 .notvisible{
     display: none;
-}
-#logout{
-    margin-top: 45vh;
 }
