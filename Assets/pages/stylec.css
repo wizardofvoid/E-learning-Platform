@@ -88,9 +88,6 @@ body::-webkit-scrollbar-track {
 #logincontainer{
     margin-top: 45vh;
 }
-#logout{
-    margin-top: 30vh;
-}
 
 /* MAIN content */
 .main {
@@ -260,4 +257,11 @@ footer {
 
 .notvisible{
     display: none;
+}
+
+.withcourse{
+    margin-top: 30vh;
+}
+.withoutcourse{
+margin-top: 45vh;
 }
