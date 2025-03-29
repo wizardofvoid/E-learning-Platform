@@ -26,7 +26,10 @@ function toggleR(){
     toggleRight.classList.add("hidden");
 }
 
-function signup() {
+emailjs.init('87ayksd6HCIjcB81M');
+function signup(event) {
+    event.preventDefault();
+
     let username = document.querySelector(".usernameReg").value;
     let email = document.querySelector(".emailReg").value;
     let password = document.querySelector(".passwordReg").value;
@@ -36,38 +39,60 @@ function signup() {
         return;
     }
 
-    localStorage.setItem(username, password);
+    localStorage.setItem(username, JSON.stringify({
+        email: email,
+        password: password
+    }));
     alert("Signup successful! Now login.");
 
-    let emailParams = {
-        user_email: email,
-        user_name: username
-    };
+    if (!email) {
+        alert("Please enter a valid email address.");
+        return;
+    }
 
-    emailjs.send("Eduvernture_ID", "template_vamlc5o", emailParams)
+    emailjs.send("Eduvernture_ID", "template_vamlc5o", {name: username, email: email})
         .then(() => {
             console.log("Email sent successfully!");
         })
         .catch((error) => {
             console.error("Email sending failed!", error);
+            if (error.text.includes("Recipient's address missing")) {
+                alert("Please ensure the recipient's email address is correctly configured in your EmailJS template.");
+            }
         });
 }
-document.querySelector("#reg").addEventListener("click", signup);
 
-function Login(){
+document.querySelector(".form-box-reg form").addEventListener("submit", signup);
+
+function Login(event){
+    event.preventDefault();
     let username = document.querySelector(".usernameLogin").value;
     let password = document.querySelector(".passwordLogin").value;
-    if(!localStorage.getItem(username)){
+    let storedData = localStorage.getItem(username);
+    if(!storedData){
         alert("No user with name "+username+" exist!");
         return;
     }
-    let storedPassword = localStorage.getItem(username);
-    if (storedPassword === password) {
+    let userData = JSON.parse(storedData);
+    let storedPassword = userData.password;
+    let storedEmail = userData.email;
+    if (password === storedPassword) {
         localStorage.setItem("loggedInUser", username);
-        window.location.pathname = "/index.html";
+        emailjs.send("Eduvernture_ID", "template_i2omixd", {name: username, email: storedEmail})
+        .then(() => {
+            console.log("Email sent successfully!");
+        })
+        .catch((error) => {
+            console.error("Email sending failed!", error);
+            if (error.text.includes("Recipient's address missing")) {
+                alert("Please ensure the recipient's email address is correctly configured in your EmailJS template.");
+            }
+        });
+        alert("Succesfully Logged in!");
     } else {
         alert("Invalid username or password!");
     }
+    location.reload();
 }
 
 document.querySelector("#login").addEventListener("click", Login);
@@ -76,9 +101,11 @@ function chkPurchase(){
     const purchased = localStorage.getItem("purchasedCourses");
     if(purchased){
         document.getElementById("learning").classList.remove('notvisible');
+        document.getElementById("logout").classList.add('withcourse');
     }
     else{
         document.getElementById("learning").classList.add('notvisible');
+        document.getElementById("logout").classList.add('withoutcourse');
     }
 }
 

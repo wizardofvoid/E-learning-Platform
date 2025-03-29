@@ -72,9 +72,11 @@ body::-webkit-scrollbar-track{
     width: 100%;
     color: var(--text-primary);
 }
-
-#logout{
+.withcourse{
     margin-top: 15vh;
+}
+.withoutcourse{
+    margin-top: 30vh;
 }
 
 /* Main Content */
