@@ -6,6 +6,7 @@
     <title>Your Cart - Edu Venture</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="./cart.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -55,21 +56,36 @@
     }
 
     loadCart();
-
+    emailjs.init('87ayksd6HCIjcB81M');
     function Buy() {
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        let username = localStorage.getItem('loggedInUser');
+        let storedData = localStorage.getItem(username);
+        let userData = JSON.parse(storedData);
+        let storedEmail = userData.email;
         if (cart.length === 0) {
             alert("Your cart is empty!");
             return;
         }
     
         let purchasedCourses = JSON.parse(localStorage.getItem('purchasedCourses')) || [];
-    
+        
         cart.forEach(item => {
             if (!purchasedCourses.includes(item.id)) {
                 purchasedCourses.push(item.id);
             } else {
                 alert(`You have already purchased "${item.name}"`);
+            }
+        });
+        emailjs.send("Eduvernture_ID", "template_i2omixd", {name: username, email: storedEmail})
+        .then(() => {
+            console.log("Email sent successfully!");
+        })
+        .catch((error) => {
+            console.error("Email sending failed!", error);
+            if (error.text.includes("Recipient's address missing")) {
+                alert("Please ensure the recipient's email address is correctly configured in your EmailJS template.");
             }
         });
     

@@ -34,6 +34,7 @@ body::-webkit-scrollbar-track {
     position: fixed;
     background-color: var(--bg-secondary);
     transition: 400ms ease-in-out;
+    z-index: 1;
 }
 .navbar ul {
     list-style: none;
